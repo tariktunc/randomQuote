@@ -7,6 +7,7 @@ import variables from "../styles/variables.module.scss";
 export default function Home() {
   const [bgColor, setBgColor] = useState("");
   const [data, setData] = useState([]);
+  const [isFaded, setIsFaded] = useState(false);
 
   const changeBackgroundColor = () => {
     let r = Math.floor(Math.random() * 256);
@@ -25,7 +26,6 @@ export default function Home() {
       setIsFaded(true);
       setTimeout(() => {
         setData(jsonData);
-        setIsFaded(false);
       }, 500);
     } catch (error) {
       console.error("Error fetching data:", error);
